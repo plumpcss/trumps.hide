@@ -1,0 +1,39 @@
+/*------------------------------------*\
+    #HIDE CONTENT
+\*------------------------------------*/
+
+/**
+ *    Hide content off-screen without resorting to `display:none;`, also
+ *    provide breakpoint specific hidden elements, when
+ *    `$plump-enable-responsive` variable is set in the project's
+ *    `style.scss`.
+ */
+$plump-enable-responsive: false !default;
+
+@mixin accessibility {
+	border: 0 !important;
+	clip: rect(0 0 0 0) !important;
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+}
+.accessibility,
+.visuallyhidden {
+	@include accessibility;
+}
+
+@if ($plump-enable-responsive == true) {
+
+	@each $state in palm, lap, lap-and-up, portable, desk, desk-wide {
+		@include media-query(#{$state}) {
+			.accessibility--#{$state},
+			.visuallyhidden--#{$state} {
+				@include accessibility;
+			}
+		}
+	}
+
+}

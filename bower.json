@@ -1,0 +1,17 @@
+{
+  "name": "plumpcss-hide",
+  "version": "0.1.0",
+  "authors": [
+    "Jon Hurrell <jon@plumpdigital.co.uk>"
+  ],
+  "description": "Hide content off-screen",
+  "main": "_trumps.hide.scss",
+  "keywords": [
+    "plumpcss",
+    "oocss",
+    "css",
+    "helper"
+  ],
+  "license": "MIT",
+  "homepage": "http://www.plumpdigital.co.uk/"
+}
