@@ -1,5 +1,5 @@
 /*------------------------------------*\
-    #HIDE CONTENT
+	#HIDE CONTENT
 \*------------------------------------*/
 
 /**
@@ -8,9 +8,10 @@
  *    `$plump-enable-responsive` variable is set in the project's
  *    `style.scss`.
  */
+
 $plump-enable-responsive: false !default;
 
-@mixin accessibility {
+@mixin hide {
 	border: 0 !important;
 	clip: rect(0 0 0 0) !important;
 	height: 1px !important;
@@ -20,18 +21,18 @@ $plump-enable-responsive: false !default;
 	position: absolute !important;
 	width: 1px !important;
 }
-.accessibility,
-.visuallyhidden {
-	@include accessibility;
+
+.hide,
+%hide {
+	@include hide;
 }
 
 @if ($plump-enable-responsive == true) {
 
-	@each $state in palm, lap, lap-and-up, portable, desk, desk-wide {
-		@include media-query(#{$state}) {
-			.accessibility--#{$state},
-			.visuallyhidden--#{$state} {
-				@include accessibility;
+	@each $state in palm, lap, lap-and-up, portable, desk, desk-wide{
+		@include media-query(#{$state}){
+			.#{$state}-hide {
+				@include hide;
 			}
 		}
 	}
