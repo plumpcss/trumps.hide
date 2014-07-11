@@ -1,6 +1,6 @@
 {
   "name": "plumpcss-hide",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "authors": [
     "Jon Hurrell <jon@plumpdigital.co.uk>"
   ],
@@ -12,6 +12,9 @@
     "css",
     "helper"
   ],
+  "dependencies" : {
+    "plumpcss-responsive" : "latest"
+  },
   "license": "MIT",
   "homepage": "http://www.plumpdigital.co.uk/"
 }
