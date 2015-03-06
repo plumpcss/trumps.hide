@@ -29,12 +29,17 @@ $plump-enable-responsive: false !default;
 
 @if ($plump-enable-responsive == true) {
 
-	@each $state in palm, lap, lap-and-up, portable, desk, desk-wide{
-		@include media-query(#{$state}){
-			.#{$state}-hide {
+	// Loop through our previously-defined breakpoints.
+	@each $breakpoint in $breakpoints {
+
+		$breakpoint-alias:  nth($breakpoint, 1);
+		
+		@include media-query($breakpoint-alias) { 
+			.#{$breakpoint-alias}-hide {
 				@include hide;
 			}
 		}
+
 	}
 
 }
