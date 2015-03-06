@@ -1,15 +1,8 @@
-/*------------------------------------*\
-	#HIDE CONTENT
-\*------------------------------------*/
+///*------------------------------------*\
+//	 #HIDE
+//\*------------------------------------*/
 
-/**
- *    Hide content off-screen without resorting to `display:none;`, also
- *    provide breakpoint specific hidden elements, when
- *    `$plump-enable-responsive` variable is set in the project's
- *    `style.scss`.
- */
-
-$plump-enable-responsive: false !default;
+//    Hide content off-screen without resorting to `display:none;`.
 
 @mixin hide {
 	border: 0 !important;
@@ -25,21 +18,4 @@ $plump-enable-responsive: false !default;
 .hide,
 %hide {
 	@include hide;
-}
-
-@if ($plump-enable-responsive == true) {
-
-	// Loop through our previously-defined breakpoints.
-	@each $breakpoint in $breakpoints {
-
-		$breakpoint-alias:  nth($breakpoint, 1);
-		
-		@include media-query($breakpoint-alias) { 
-			.#{$breakpoint-alias}-hide {
-				@include hide;
-			}
-		}
-
-	}
-
 }
