@@ -4,6 +4,9 @@
 
 //    Hide content off-screen without resorting to `display:none;`.
 
+//    Predefine the variables below in order to alter and enable specific features.
+$plump-hide-namespace: $plump-namespace !default;
+
 @mixin hide {
 	border: 0 !important;
 	clip: rect(0 0 0 0) !important;
@@ -15,7 +18,7 @@
 	width: 1px !important;
 }
 
-.hide,
+.#{$plump-hide-namespace}u-hide,
 %hide {
 	@include hide;
 }
