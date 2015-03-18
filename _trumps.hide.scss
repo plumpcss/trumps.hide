@@ -19,6 +19,6 @@ $plump-hide-namespace: $plump-namespace !default;
 }
 
 .#{$plump-hide-namespace}u-hide,
-%hide {
+%#{$plump-hide-namespace}u-hide {
 	@include hide;
 }
